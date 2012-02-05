@@ -54,21 +54,21 @@
                 <mode>file</mode>
 
                 <!-- [start] Actual only for mode:directory -->
-                <dir>sku</dir>
-                <base_image_name>base</base_image_name>
-                <small_image_name>small</small_image_name>
-                <thumbnail_image_name>thumbnail</thumbnail_image_name>
+                <dir>sku</dir><!-- Product attribute -->
+                <base_image_name>base</base_image_name> <!-- Filename, with or without extension. -->
+                <small_image_name>small</small_image_name> <!-- Filename, with or without extension. -->
+                <thumbnail_image_name>thumbnail</thumbnail_image_name> <!-- Filename, with or without extension. -->
                 <!-- [end] Actual only for mode:directory -->
 
                 <!-- [start] Actual only for mode:file -->
-                <base_image>sku</base_image> <!-- Product attribute -->
-                <small_image>sku</small_image> <!-- Product attribute -->
-                <thumbnail_image>sku</thumbnail_image> <!-- Product attribute -->
+                <base_image>sku</base_image> <!-- Product attribute of which contains filename -->
+                <small_image>sku</small_image> <!-- Product attribute of which contains filename -->
+                <thumbnail_image>sku</thumbnail_image> <!-- Product attribute of which contains filename -->
                 <!-- [end] Actual only for mode:file -->
 
-                <base_image_ext>jpg,png,gif</base_image_ext> <!-- Leave empty if defined in attribute value -->
-                <small_image_ext>jpg,png,gif</small_image_ext> <!-- Leave empty if defined in attribute value -->
-                <thumbnail_image_ext>jpg,png,gif</thumbnail_image_ext> <!-- Leave empty if defined in attribute value -->
+                <base_image_ext>jpg,png,gif</base_image_ext> <!-- Leave empty if defined in attribute or config -->
+                <small_image_ext>jpg,png,gif</small_image_ext> <!-- Leave empty if defined in attribute or config -->
+                <thumbnail_image_ext>jpg,png,gif</thumbnail_image_ext> <!-- Leave empty if defined in attribute or config -->
 
             </fsgallery>
         </catalog>
