@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Filesystem Product Gallery - Magento Extension
+*
+* @package FsGallery
+* @category EcommerceTeam
+* @copyright Copyright 2012 EcommerceTeam Inc. (http://www.ecommerce-team.com)
+* @version: 1.0.0
+*/
+-->
+<config>
+    <modules>
+        <EcommerceTeam_FsGallery>
+            <version>1.0.0</version>
+        </EcommerceTeam_FsGallery>
+    </modules>
+    <global>
+        <models>
+            <ecommerceteam_fsgallery>
+                <class>EcommerceTeam_FsGallery_Model</class>
+            </ecommerceteam_fsgallery>
+        </models>
+        <blocks>
+            <ecommerceteam_fsgallery>
+                <class>EcommerceTeam_FsGallery_Block</class>
+            </ecommerceteam_fsgallery>
+        </blocks>
+        <helpers>
+            <ecommerceteam_fsgallery>
+                <class>EcommerceTeam_FsGallery_Helper</class>
+            </ecommerceteam_fsgallery>
+            <catalog>
+                <rewrite>
+                    <image>EcommerceTeam_FsGallery_Helper_Image</image>
+                </rewrite>
+            </catalog>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <ecommerceteam_fsgallery module="ecommerceteam_fsgallery">
+                    <file>ecommerceteam/fsgallary.xml</file>
+                </ecommerceteam_fsgallery>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <catalog>
+            <fsgallery>
+                <enabled>1</enabled>
+                <mode>directory</mode>
+                <dir>sku</dir>
+                <base_image>sku</base_image>
+                <base_image_ext>jpg, png, gif</base_image_ext>
+                <small_image>sku</small_image>
+                <small_image_ext>jpg, png, gif</small_image_ext>
+                <thumbnail_image>sku</thumbnail_image>
+                <thumbnail_image_ext>jpg, png, gif</thumbnail_image_ext>
+                <base_image_name>base</base_image_name>
+                <small_image_name>small</small_image_name>
+                <thumbnail_image_name>thumbnail</thumbnail_image_name>
+            </fsgallery>
+        </catalog>
+    </default>
+</config>

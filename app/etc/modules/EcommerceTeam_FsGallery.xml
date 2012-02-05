@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Filesystem Product Gallery - Magento Extension
+*
+* @package FsGallery
+* @category EcommerceTeam
+* @copyright Copyright 2012 EcommerceTeam Inc. (http://www.ecommerce-team.com)
+* @version: 1.0.0
+*/
+-->
+<config>
+    <modules>
+        <EcommerceTeam_FsGallery>
+            <active>true</active>
+            <codePool>community</codePool>
+        </EcommerceTeam_FsGallery>
+    </modules>
+</config>
