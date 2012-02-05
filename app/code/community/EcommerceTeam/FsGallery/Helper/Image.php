@@ -95,8 +95,8 @@ class EcommerceTeam_FsGallery_Helper_Image
             $this->setImageFile($imageFile);
         } else if($this->getConfigFlag('enabled')) {
             if (self::MODE_DIRECTORY == $this->getConfigData('mode')) {
-                $attributeName = $this->getConfigData('dir');
-                $productDir = trim($product->getData($attributeName));
+                $imageAttributeName = $this->getConfigData('dir');
+                $productDir = trim($product->getData($imageAttributeName));
                 if ($productDir) {
                     $image  = null;
                     $images = $this->_getImages($productDir);
@@ -151,6 +151,41 @@ class EcommerceTeam_FsGallery_Helper_Image
                         }
                     } catch (Exception $e) {
                         $imageModel->setBaseFile(null);
+                    }
+                }
+            } else if(self::MODE_FILE == $this->getConfigData('mode')) {
+                switch($attributeName){
+                    case 'image' == $attributeName:
+                    default:
+                        $imageAttributeName = trim($this->getConfigData('base_image'));
+                        $availableExt       = trim($this->getConfigData('base_image_ext'));
+                        break;
+                    case 'small_image' == $attributeName:
+                        $imageAttributeName = trim($this->getConfigData('small_image'));
+                        $availableExt       = trim($this->getConfigData('small_image_ext'));
+                        break;
+                    case 'thumbnail' == $attributeName:
+                        $imageAttributeName = trim($this->getConfigData('thumbnail_image'));
+                        $availableExt       = trim($this->getConfigData('thumbnail_image_ext'));
+                        break;
+                }
+                $imageName = trim($product->getData($imageAttributeName));
+                if ($availableExt) {
+                    $availableExt = explode(',', $availableExt);
+                }
+                if (!empty($availableExt)){
+                    $available = array();
+                    foreach ($availableExt as $ext) {
+                        $available[] = $imageName . '.' . trim($ext);
+                    }
+                } else {
+                    $available = array($imageName);
+                }
+
+                foreach ($available as $imageFilename) {
+                    if (file_exists($this->_baseDir . DS . $imageFilename)) {
+                        $this->setImageFile($this->_galleryDir . DS . $imageFilename);
+                        $imageModel->setBaseFile($this->_galleryDir . DS . $imageFilename);
                     }
                 }
             }

@@ -50,17 +50,26 @@
         <catalog>
             <fsgallery>
                 <enabled>1</enabled>
-                <mode>directory</mode>
+                <!--<mode>directory</mode>-->
+                <mode>file</mode>
+
+                <!-- [start] Actual only for mode:directory -->
                 <dir>sku</dir>
-                <base_image>sku</base_image>
-                <base_image_ext>jpg, png, gif</base_image_ext>
-                <small_image>sku</small_image>
-                <small_image_ext>jpg, png, gif</small_image_ext>
-                <thumbnail_image>sku</thumbnail_image>
-                <thumbnail_image_ext>jpg, png, gif</thumbnail_image_ext>
                 <base_image_name>base</base_image_name>
                 <small_image_name>small</small_image_name>
                 <thumbnail_image_name>thumbnail</thumbnail_image_name>
+                <!-- [end] Actual only for mode:directory -->
+
+                <!-- [start] Actual only for mode:file -->
+                <base_image>sku</base_image> <!-- Product attribute -->
+                <small_image>sku</small_image> <!-- Product attribute -->
+                <thumbnail_image>sku</thumbnail_image> <!-- Product attribute -->
+                <!-- [end] Actual only for mode:file -->
+
+                <base_image_ext>jpg,png,gif</base_image_ext> <!-- Leave empty if defined in attribute value -->
+                <small_image_ext>jpg,png,gif</small_image_ext> <!-- Leave empty if defined in attribute value -->
+                <thumbnail_image_ext>jpg,png,gif</thumbnail_image_ext> <!-- Leave empty if defined in attribute value -->
+
             </fsgallery>
         </catalog>
     </default>
